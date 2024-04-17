@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    // Main screen
+    <string name="search_plane_ticket">Поиск дешевых авиабилетов</string>
+    <string name="destination_turki">Куда-Турция</string>
+    <string name="music_fly">Музыкально отлететь</string>
+    <string name="show_all_places">Показать все места</string>
+    <string name="your_first_time">Ваш первый раз</string>
+    <string name="air_tickets">Авиабилеты</string>
+    <string name="hotel">Отели</string>
+    <string name="shorter">Короче</string>
+    <string name="subscription">Подписки</string>
+    <string name="profile">Профиль</string>
+
+    // Search screen
+    <string name="hard_destination">Сложный маршрут</string>
+    <string name="anywhere">Куда угодно</string>
+    <string name="weekend">Выходные</string>
+    <string name="hot_tickets">Горячие билеты</string>
+    <string name="stambul">Стамбул</string>
+    <string name="sochi">Стамбул</string>
+    <string name="phiket">Стамбул</string>
+    <string name="popularity_destination">Популярное направление</string>
+
+    // Select country screen
+    <string name="straight_rails">Прямые рельсы</string>
+    <string name="show_all">Показать все</string>
+    <string name="show_all_tickets">Посмотреть все билеты</string>
+
+    // See all ticket screen
+    <string name="filter">Фильтр</string>
+    <string name="graf_price">График цен</string>
+
+
+</resources>
