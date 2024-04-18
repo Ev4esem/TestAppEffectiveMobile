@@ -3,7 +3,7 @@
 
 
     // Main screen
-    <string name="search_plane_ticket">Поиск дешевых авиабилетов</string>
+    <string name="search_plane_ticket">Поиск дешевых\nавиабилетов</string>
     <string name="destination_turki">Куда-Турция</string>
     <string name="music_fly">Музыкально отлететь</string>
     <string name="show_all_places">Показать все места</string>
@@ -13,6 +13,7 @@
     <string name="shorter">Короче</string>
     <string name="subscription">Подписки</string>
     <string name="profile">Профиль</string>
+    <string name="moskov">Москва</string>
 
     // Search screen
     <string name="hard_destination">Сложный маршрут</string>

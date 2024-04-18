@@ -1,12 +1,12 @@
 package com.example.feature_main.view
 
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.asFlow
 import androidx.lifecycle.viewModelScope
 import com.example.base.EffectHandler
 import com.example.base.collectAsResult
 import com.example.feature_main.domain.model.Offer
+import com.example.feature_main.domain.model.Town
+import com.example.feature_main.domain.model.Util
 import com.example.feature_main.domain.repo.MainRepository
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -25,6 +25,32 @@ class MainViewModel(
 
     init {
         getOfferList()
+        getTownList()
+        getUtils()
+    }
+
+    private fun getTownList() {
+
+        val townList = mainRepository.getTownList()
+
+        _uiState.update { currentState ->
+            currentState.copy(
+                townList = townList
+            )
+        }
+
+
+    }
+
+    private fun getUtils() {
+        val utils = mainRepository.getUtils()
+
+        _uiState.update { currentState ->
+            currentState.copy(
+                utils = utils
+            )
+        }
+
     }
 
     private fun getOfferList() {
@@ -80,5 +106,7 @@ sealed interface MainEffect {
 data class UiState(
     val offerList : List<Offer> = emptyList(),
     val error : String? = null,
+    val utils : List<Util> = emptyList(),
+    val townList : List<Town> = emptyList(),
     val loading : Boolean = false
 )

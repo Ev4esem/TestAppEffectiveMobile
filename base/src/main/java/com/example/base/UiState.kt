@@ -1,12 +1,18 @@
 package com.example.base
 
 import android.os.NetworkOnMainThreadException
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.LifecycleOwner
+import androidx.lifecycle.lifecycleScope
 import com.google.gson.JsonParseException
 import com.google.gson.JsonSyntaxException
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.onStart
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import retrofit2.HttpException
 import java.io.IOException
 import java.net.HttpURLConnection
@@ -35,6 +41,18 @@ fun <T> Flow<T>.asResult() : Flow<UiState<T>> {
                 )
             )
         }
+}
+
+fun <T> observeEffect(lifecycleOwner: LifecycleOwner, flow: Flow<T>, onEvent: (T) -> Unit) {
+    lifecycleOwner.lifecycleScope.launch {
+        if (lifecycleOwner.lifecycle.currentState.isAtLeast(Lifecycle.State.STARTED)) {
+            flow.collect { value ->
+                withContext(Dispatchers.Main) {
+                    onEvent(value)
+                }
+            }
+        }
+    }
 }
 
 suspend fun <T> Flow<T>.collectAsResult(

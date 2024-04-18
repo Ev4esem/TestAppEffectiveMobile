@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    // Search screen
+    <string name="hard_destination">Сложный маршрут</string>
+    <string name="anywhere">Куда угодно</string>
+    <string name="weekend">Выходные</string>
+    <string name="hot_tickets">Горячие билеты</string>
+    <string name="stambul">Стамбул</string>
+    <string name="sochi">Стамбул</string>
+    <string name="phiket">Стамбул</string>
+    <string name="popularity_destination">Популярное направление</string>
+
+
+</resources>

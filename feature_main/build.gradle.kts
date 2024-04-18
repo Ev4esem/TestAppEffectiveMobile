@@ -30,6 +30,11 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+
+    buildFeatures {
+        viewBinding = true
+    }
+
 }
 
 dependencies {
@@ -41,6 +46,9 @@ dependencies {
     // Retrofite
     implementation(libs.squareup.retrofit2)
     implementation(libs.squareup.retrofit2.converter.gson)
+
+    //Koin
+    implementation(libs.koin.android)
 
     // Livedata
     implementation(libs.lifecycle.viewmodel.ktx)
