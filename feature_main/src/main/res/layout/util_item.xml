@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
     android:orientation="vertical"
-    android:layout_gravity="center_horizontal"
+    android:gravity="center_horizontal"
+
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id = "@+id/imUtil"
         android:layout_width="48dp"
         android:layout_height="48dp"
+        app:contentPadding="5dp"
         app:shapeAppearanceOverlay="@style/roundedImageView"
         android:scaleType="centerCrop"
         />
@@ -17,6 +20,7 @@
     <TextView
         android:id="@+id/tvTitle"
         android:layout_marginTop="2dp"
+        android:textAlignment="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/White"

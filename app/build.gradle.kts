@@ -52,7 +52,7 @@ dependencies {
     //OkHttp
     implementation(libs.squareup.okhttp3.interceptor)
 
-    //Koin
+    // Koin
     implementation(libs.koin.android)
 
     // Retrofite

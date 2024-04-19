@@ -1,11 +1,11 @@
-package com.example.feature_main.view.adapter
+package com.example.feature_main.view.adapters
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.feature_main.databinding.UtilItemBinding
-import com.example.feature_main.domain.model.Util
+import com.example.feature_main.domain.model.search_model.Util
 
 class UtilAdapter(
     private val utilList : List<Util>
@@ -27,9 +27,9 @@ class UtilAdapter(
 
         holder.binding.apply {
 
-            tvTitle.text = util.title.toString()
+            tvTitle.text = util.title
             imUtil.setImageResource(util.image)
-            imUtil.setBackgroundColor(util.color)
+            imUtil.setBackgroundResource(util.color)
         }
 
     }

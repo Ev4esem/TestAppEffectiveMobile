@@ -2,7 +2,7 @@
 <resources>
 
     // Search screen
-    <string name="hard_destination">Сложный маршрут</string>
+    <string name="hard_destination">Сложный\n маршрут</string>
     <string name="anywhere">Куда угодно</string>
     <string name="weekend">Выходные</string>
     <string name="hot_tickets">Горячие билеты</string>

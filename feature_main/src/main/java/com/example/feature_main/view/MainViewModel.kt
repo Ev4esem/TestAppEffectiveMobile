@@ -1,14 +1,18 @@
 package com.example.feature_main.view
 
+import android.util.Log
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.base.EffectHandler
 import com.example.base.collectAsResult
-import com.example.feature_main.domain.model.Offer
-import com.example.feature_main.domain.model.Town
-import com.example.feature_main.domain.model.Util
+import com.example.feature_main.domain.model.main_model.Offer
+import com.example.feature_main.domain.model.search_model.Town
+import com.example.feature_main.domain.model.search_model.Util
 import com.example.feature_main.domain.repo.MainRepository
 import kotlinx.coroutines.channels.Channel
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
@@ -40,6 +44,7 @@ class MainViewModel(
         }
 
 
+
     }
 
     private fun getUtils() {
@@ -56,6 +61,7 @@ class MainViewModel(
     private fun getOfferList() {
         viewModelScope.launch {
 
+
             mainRepository.getOfferList().collectAsResult(
                 onSuccess = { offerList ->
 
@@ -65,6 +71,7 @@ class MainViewModel(
                             loading = false,
                             error = null
                         )
+
                     }
 
                 },

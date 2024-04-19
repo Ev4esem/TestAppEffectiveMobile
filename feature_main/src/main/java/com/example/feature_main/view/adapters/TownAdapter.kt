@@ -1,11 +1,11 @@
-package com.example.feature_main.view.adapter
+package com.example.feature_main.view.adapters
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.feature_main.databinding.TownItemBinding
-import com.example.feature_main.domain.model.Town
+import com.example.feature_main.domain.model.search_model.Town
 
 
 class TownAdapter(
@@ -28,7 +28,7 @@ class TownAdapter(
 
         holder.binding.apply {
 
-            tvTown.text = town.title.toString()
+            tvTown.text = town.title
             imTown.setImageResource(town.image)
         }
 

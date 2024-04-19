@@ -1,4 +1,4 @@
-package com.example.feature_main.view
+package com.example.feature_main.view.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,9 +6,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView.HORIZONTAL
+import androidx.recyclerview.widget.RecyclerView.VERTICAL
 import com.example.base.observeEffect
 import com.example.feature_main.databinding.MainScreenBinding
-import com.example.feature_main.view.adapter.OfferAdapter
+import com.example.feature_main.view.MainEffect
+import com.example.feature_main.view.MainViewModel
+import com.example.feature_main.view.adapters.OfferAdapter
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainFragment : Fragment() {
@@ -32,6 +37,9 @@ class MainFragment : Fragment() {
         return binding.root
     }
 
+
+
+
     override fun onViewCreated(view : View, savedInstanceState : Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -39,12 +47,24 @@ class MainFragment : Fragment() {
 
         val offerAdapter = OfferAdapter(uiState.offerList)
 
-        binding.rvOffers.adapter = offerAdapter
+        if (!uiState.error.isNullOrBlank()) {
+
+            binding.errorItem.visibility = View.VISIBLE
+            binding.loadingItem.visibility = View.GONE
+        } else if(uiState.loading) {
+            binding.errorItem.visibility = View.GONE
+            binding.loadingItem.visibility = View.VISIBLE
+        } else {
+            binding.errorItem.visibility = View.GONE
+            binding.loadingItem.visibility = View.GONE
+            binding.rvOffers.layoutManager = LinearLayoutManager(requireContext(), HORIZONTAL, false)
+            binding.rvOffers.adapter = offerAdapter
+        }
 
         binding.tvDestinationTown.setOnFocusChangeListener { view, hasFocus ->
 
             if (hasFocus) {
-                val bottomSheetFragment = SearchBottomSheetFragment()
+                val bottomSheetFragment = SearchBottomSheetFragment(mainViewModel)
                 bottomSheetFragment.show(childFragmentManager, bottomSheetFragment.tag)
             }
 
@@ -61,4 +81,6 @@ class MainFragment : Fragment() {
 
     }
 
+
 }
+

@@ -49,6 +49,9 @@ dependencies {
 
     //Koin
     implementation(libs.koin.android)
+    //Navigation
+    implementation(libs.navigation.fragment.ktx)
+    implementation(libs.navigation.ui.ktx)
 
     // Livedata
     implementation(libs.lifecycle.viewmodel.ktx)

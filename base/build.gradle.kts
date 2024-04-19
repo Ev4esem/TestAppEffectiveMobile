@@ -44,7 +44,9 @@ dependencies {
     implementation(libs.squareup.okhttp3.interceptor)
     implementation(libs.squareup.okhttp3)
 
-
+    // Navigation
+    implementation(libs.navigation.fragment.ktx)
+    implementation(libs.navigation.ui.ktx)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

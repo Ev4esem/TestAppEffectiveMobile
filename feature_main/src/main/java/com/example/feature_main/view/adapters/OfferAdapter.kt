@@ -1,11 +1,11 @@
-package com.example.feature_main.view.adapter
+package com.example.feature_main.view.adapters
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.feature_main.databinding.OfferItemBinding
-import com.example.feature_main.domain.model.Offer
+import com.example.feature_main.domain.model.main_model.Offer
 
 class OfferAdapter(
     private val offersList : List<Offer>

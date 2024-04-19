@@ -6,7 +6,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.feature_main.view.MainFragment
+import com.example.feature_main.view.fragments.MainFragment
 import com.example.testappeffectivemobile.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
 
 
         supportFragmentManager.beginTransaction()
-            .add(R.id.container,MainFragment())
+            .replace(R.id.container, MainFragment())
             .commit()
     }
 }

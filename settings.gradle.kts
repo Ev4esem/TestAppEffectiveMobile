@@ -23,3 +23,4 @@ rootProject.name = "TestAppEffectiveMobile"
 include(":app")
 include(":base")
 include(":feature_main")
+include(":feature_select_country")
