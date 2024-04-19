@@ -81,9 +81,8 @@ class SearchBottomSheetFragment(
         binding.rvUtil.adapter = utilAdapter
         binding.tvDestinationTown.requestFocus()
 
-        if (binding.tvDestinationTown.text!!.isNotEmpty()) {
-
-
+        if (binding.tvDestinationTown.text?.length != 0) {
+            navigationToDeepLink(DeepLink.allTicketScreen, this@SearchBottomSheetFragment)
         }
 
     }

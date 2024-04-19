@@ -1,10 +1,8 @@
 package com.example.testappeffectivemobile.di
 
 import com.example.feature_main.data.network.MainApi
-import com.google.gson.GsonBuilder
-import okhttp3.Interceptor
+import com.example.feature_select_country.data.network.SelectCountryApi
 import okhttp3.OkHttpClient
-import okhttp3.Response
 import org.koin.core.module.dsl.singleOf
 import org.koin.dsl.module
 import retrofit2.Retrofit
@@ -14,7 +12,7 @@ import java.util.concurrent.TimeUnit
 
 const val BASE_URL = "https://drive.google.com/"
 
-val apiModule = module {
+val appModule = module {
 
 
 }
@@ -25,6 +23,7 @@ val networkModule = module {
 
     single<OkHttpClient> { provideOkHttp() }
     singleOf(::provideRetrofit)
+    single { provideApi<SelectCountryApi>(get()) }
     single { provideApi<MainApi>(get()) }
 }
 

@@ -1,4 +1,4 @@
-package com.example.feature_main.domain.model.select_country_model
+package com.example.feature_select_country.domain.model
 
 data class TicketsOffer(
     val id: Int,

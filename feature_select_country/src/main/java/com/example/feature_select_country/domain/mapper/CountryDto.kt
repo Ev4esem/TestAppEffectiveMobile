@@ -1,6 +1,5 @@
-package com.example.feature_main.domain.mapper.select_country_model
+package com.example.feature_select_country.domain.mapper
 
-import com.example.feature_main.domain.model.select_country_model.TicketsOffer
 import com.google.gson.annotations.SerializedName
 
 data class CountryDto(
@@ -8,7 +7,7 @@ data class CountryDto(
     val tickets_offers: List<TicketsOfferDto>
 )
 
-fun List<TicketsOfferDto>.toCountry() : List<TicketsOffer>{
+fun List<TicketsOfferDto>.toCountry() : List<com.example.feature_select_country.domain.model.TicketsOffer>{
     return map {
         it.toTicketsOffer()
     }

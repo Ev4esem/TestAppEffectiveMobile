@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.feature_main.databinding.OfferItemBinding
 import com.example.feature_main.domain.model.main_model.Offer
 
-class OfferAdapter(
+internal class OfferAdapter(
     private val offersList : List<Offer>
 ) : RecyclerView.Adapter<OfferViewHolder>() {
     override fun onCreateViewHolder(parent : ViewGroup, viewType : Int) : OfferViewHolder {

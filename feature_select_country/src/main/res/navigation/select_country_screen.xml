@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/select_country_screen"
+    app:startDestination="@id/selectCountryFragment">
+
+    <fragment
+        android:id="@+id/selectCountryFragment"
+        android:name="com.example.feature_select_country.view.SelectCountryFragment"
+        android:label="SelectCountryFragment"
+        tools:layout="@layout/select_country_screen"
+        >
+        <deepLink
+            android:id = "@+id/deepLink"
+            app:uri="test-app-effective-mobile://example.google.app/select-screen"
+            />
+
+    </fragment>
+</navigation>

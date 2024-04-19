@@ -62,6 +62,8 @@ dependencies {
 
     // Modules
     implementation(project(":feature_main"))
+    implementation(project(":feature_select_country"))
+    implementation(project(":navigation"))
 
 
     androidTestImplementation(libs.androidx.junit)

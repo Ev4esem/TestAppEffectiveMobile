@@ -13,6 +13,7 @@
             <option value="$PROJECT_DIR$/base" />
             <option value="$PROJECT_DIR$/feature_main" />
             <option value="$PROJECT_DIR$/feature_select_country" />
+            <option value="$PROJECT_DIR$/navigation" />
           </set>
         </option>
         <option name="resolveExternalAnnotations" value="false" />

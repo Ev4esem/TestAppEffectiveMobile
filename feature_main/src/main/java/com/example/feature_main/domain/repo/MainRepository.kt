@@ -3,7 +3,6 @@ package com.example.feature_main.domain.repo
 import com.example.feature_main.domain.model.main_model.Offer
 import com.example.feature_main.domain.model.search_model.Town
 import com.example.feature_main.domain.model.search_model.Util
-import com.example.feature_main.domain.model.select_country_model.TicketsOffer
 import kotlinx.coroutines.flow.Flow
 
 interface MainRepository {
@@ -17,6 +16,5 @@ interface MainRepository {
 
      fun getTownList() : List<Town>
 
-     fun getCountryList() : Flow<List<TicketsOffer>>
 
 }
