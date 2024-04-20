@@ -59,11 +59,15 @@ dependencies {
     implementation(libs.squareup.retrofit2)
     implementation(libs.squareup.retrofit2.converter.gson)
 
+    // Navigation
+    implementation(libs.navigation.fragment.ktx)
+    implementation(libs.navigation.ui.ktx)
 
     // Modules
     implementation(project(":feature_main"))
     implementation(project(":feature_select_country"))
     implementation(project(":navigation"))
+    implementation(project(":data"))
 
 
     androidTestImplementation(libs.androidx.junit)

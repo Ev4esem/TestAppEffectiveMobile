@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.jetbrainsKotlinAndroid)
+    id("androidx.navigation.safeargs.kotlin")
 }
 
 android {
@@ -39,9 +40,6 @@ dependencies {
     // Navigation
     implementation(libs.navigation.fragment.ktx)
     implementation(libs.navigation.ui.ktx)
-
-    implementation(project(":feature_main"))
-    implementation(project(":feature_select_country"))
 
     implementation(libs.material)
     testImplementation(libs.junit)

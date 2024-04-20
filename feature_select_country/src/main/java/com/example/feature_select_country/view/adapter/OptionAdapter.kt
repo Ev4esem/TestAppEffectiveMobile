@@ -6,13 +6,13 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.feature_select_country.databinding.OptionItemBinding
-import com.example.feature_select_country.domain.model.Option
+import com.example.data.model.select_country_model.Option
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Locale
 
 class OptionAdapter(
-    private val utilList : List<Option>
+    private val utilList : List<com.example.data.model.select_country_model.Option>
 ) : RecyclerView.Adapter<OptionViewHolder>() {
 
 
@@ -42,7 +42,7 @@ class OptionAdapter(
 
 class OptionViewHolder(val binding : OptionItemBinding) : RecyclerView.ViewHolder(binding.root) {
 
-    fun bind(option : Option) {
+    fun bind(option : com.example.data.model.select_country_model.Option) {
         binding.tvTitle.text = option.title
         binding.image.setImageResource(option.image)
         binding.root.setOnClickListener {

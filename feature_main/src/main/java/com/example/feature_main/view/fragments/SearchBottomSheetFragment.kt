@@ -9,12 +9,12 @@ import android.view.WindowManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView.HORIZONTAL
 import androidx.recyclerview.widget.RecyclerView.VERTICAL
-import com.example.base.DeepLink
-import com.example.base.navigationToDeepLink
 import com.example.feature_main.databinding.SearchBottomSheetBinding
 import com.example.feature_main.view.MainViewModel
 import com.example.feature_main.view.adapters.TownAdapter
 import com.example.feature_main.view.adapters.UtilAdapter
+import com.example.navigation.NavigationFlow
+import com.example.navigation.ToFlowNavigatable
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
@@ -72,7 +72,6 @@ class SearchBottomSheetFragment(
         val uiState = mainViewModel.uiState.value
 
 
-
         val utilAdapter = UtilAdapter(uiState.utils)
         val townAdapter = TownAdapter(uiState.townList)
         binding.rvTown.layoutManager = LinearLayoutManager(requireContext(), VERTICAL, false)
@@ -82,7 +81,15 @@ class SearchBottomSheetFragment(
         binding.tvDestinationTown.requestFocus()
 
         if (binding.tvDestinationTown.text?.length != 0) {
-            navigationToDeepLink(DeepLink.allTicketScreen, this@SearchBottomSheetFragment)
+
+            val city = binding.tvTown.text.toString()
+            val destination = binding.tvDestinationTown.text.toString()
+
+            (requireActivity() as ToFlowNavigatable).navigateToFlow(
+                NavigationFlow.SelectCountryFlow(
+                    city, destination
+                )
+            )
         }
 
     }

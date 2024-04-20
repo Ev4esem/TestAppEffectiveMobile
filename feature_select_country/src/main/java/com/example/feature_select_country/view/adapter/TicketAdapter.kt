@@ -5,10 +5,10 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.feature_select_country.databinding.TicketItemBinding
-import com.example.feature_select_country.domain.model.TicketsOffer
+import com.example.data.model.select_country_model.TicketsOffer
 
 class TicketAdapter(
-    private val tickets : List<TicketsOffer>
+    private val tickets : List<com.example.data.model.select_country_model.TicketsOffer>
 ) : RecyclerView.Adapter<TicketViewHolder>() {
     override fun onCreateViewHolder(parent : ViewGroup, viewType : Int) : TicketViewHolder {
 
@@ -35,7 +35,7 @@ class TicketAdapter(
 class TicketViewHolder(val binding : TicketItemBinding) : RecyclerView.ViewHolder(binding.root) {
 
     @SuppressLint("SetTextI18n")
-    fun bind(tickets : TicketsOffer) {
+    fun bind(tickets : com.example.data.model.select_country_model.TicketsOffer) {
         binding.apply {
             val timeRangeText = tickets.time_range.joinToString(" ")
             tvTime.text = tickets.title

@@ -4,9 +4,9 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.base.EffectHandler
 import com.example.base.collectAsResult
-import com.example.feature_select_country.domain.model.Option
-import com.example.feature_select_country.domain.model.TicketsOffer
-import com.example.feature_select_country.domain.repo.SelectCountryRepository
+import com.example.data.model.select_country_model.Option
+import com.example.data.model.select_country_model.TicketsOffer
+import com.example.data.repo.SelectCountryRepository
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -14,7 +14,7 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
 class SelectCountryViewModel(
-    private val selectCountryRepository : SelectCountryRepository
+    private val selectCountryRepository : com.example.data.repo.SelectCountryRepository
 ) : ViewModel(), EffectHandler<SelectCountryEffect> {
 
     private val _uiState = MutableStateFlow(SelectCountryUiState())
@@ -93,8 +93,8 @@ sealed interface SelectCountryEffect {
 
 
 data class SelectCountryUiState(
-    val options : List<Option> = emptyList(),
+    val options : List<com.example.data.model.select_country_model.Option> = emptyList(),
     val loading : Boolean = false,
     val error : String? = null,
-    val tickets : List<TicketsOffer> = emptyList()
+    val tickets : List<com.example.data.model.select_country_model.TicketsOffer> = emptyList()
 )

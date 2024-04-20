@@ -5,11 +5,11 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.feature_main.databinding.TownItemBinding
-import com.example.feature_main.domain.model.search_model.Town
+import com.example.data.model.search_model.Town
 
 
 class TownAdapter(
-    private val utilList : List<Town>
+    private val utilList : List<com.example.data.model.search_model.Town>
 ) : RecyclerView.Adapter<TownViewHolder>() {
     override fun onCreateViewHolder(parent : ViewGroup, viewType : Int) : TownViewHolder {
 

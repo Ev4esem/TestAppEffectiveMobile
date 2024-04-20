@@ -58,6 +58,8 @@ dependencies {
     implementation(libs.lifecycle.livedata.ktx)
 
     implementation(project(":base"))
+    implementation(project(":navigation"))
+    implementation(project(":data"))
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

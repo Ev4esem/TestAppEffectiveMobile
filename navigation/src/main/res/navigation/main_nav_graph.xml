@@ -8,5 +8,30 @@
     <include app:graph="@navigation/main_screen" />
     <include app:graph="@navigation/select_country_screen" />
 
+    <action
+        android:id="@+id/action_global_main_flow"
+        app:destination="@id/main_screen"
+        app:popUpTo="@id/main_nav_graph"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim"
+        />
+
+    <action
+        android:id="@+id/action_global_select_country_flow"
+        app:popUpTo="@id/main_nav_graph"
+        app:destination="@id/select_country_screen"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim"
+        >
+
+        <argument
+            android:name="city"
+            app:argType="string"
+            />
+        <argument
+            android:name="destination"
+            app:argType="string"
+            />
+    </action>
 
 </navigation>
